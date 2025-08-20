@@ -1,3 +1,12 @@
+## If Clone,
+    git clone https://github.com/nooraalam1/My_Laravel_Project.git
+    cd My_Laravel_Project
+    composer i
+    php artisan key:generate
+    npm i
+    npm run build
+
+
 ## Project Setup
     create-project laravel/laravel Project_Name
     cd Project_Name
