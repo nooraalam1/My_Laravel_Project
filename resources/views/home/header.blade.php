@@ -34,10 +34,17 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="">
+            <a href={{route('login')}}>
               <i class="fa fa-user" aria-hidden="true"></i>
               <span>
                 Login
+              </span>
+            </a>
+
+            <a  href={{route('register')}}>
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>
+                Register
               </span>
             </a>
             <a href="">
