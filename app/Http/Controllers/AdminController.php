@@ -11,15 +11,44 @@ class AdminController extends Controller
         $data = Category::all();
         return view('admin.categories', compact('data'));
     }
+public function create(Request $request){
 
-    public function create(Request $request){
-       $data = $request->validate([
-            'category_name'=>'required|string|max:255'
-        ]);
+    $data = $request->validate([
 
-        $store = Category::create($data);
+        'category_name'=>'required',
 
-        return redirect()->route('admin.categories')->with('success', 'Category created successfully.');
-    }
+    ]);
+
+    Category::create($data);
+
+    return redirect(route('create'));
+
+}
+
+public function edit(Category $data){
+
+return view('admin.edit',['data'=>$data]);
+
+}
+
+public function update(Request $request,Category $data){
+
+    $datam = $request->validate([
+
+        "category_name" => "required"
+
+    ]);
+
+    $data->update($datam);
+
+    return redirect (route('admin.categories'));
+}
+
+public function delete(Category $data){
+
+    $data->delete();
+    return redirect(route('admin.categories'));
+
+}
 
 }

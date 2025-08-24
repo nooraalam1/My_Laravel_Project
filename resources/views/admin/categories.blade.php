@@ -7,15 +7,19 @@
      <div class="page-content">
 
          @include('admin.pageheader')
+<div>
 
-         <form action="{{route('admin.create.category')}}" method="POST" class="p-5">
+         <form class="p-5" method="POST" action="{{route('create')}}">
             @csrf
+            @method('POST')
                 <h2 class="mb-4">Add Category</h2>
              <div>
                  <input type="text" name="category_name" placeholder="Enter Category Name">
                  <input class="btn btn-primary" type="submit" value="Add Category">
              </div>
          </form>
+
+</div>
 
 <div class="overflow-x-auto">
   <table class="table">
@@ -25,17 +29,30 @@
 
         <th>ID</th>
         <th>Category Name</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
 
         @foreach ($data as $data)
 
-
-
       <tr>
         <th>{{$data->id}}</th>
         <th>{{$data->category_name}}</th>
+        <th>
+
+            <a href="{{route('edit',['data'=>$data])}}" class="bt btn-primary">Edit</a>
+
+            <div>
+
+                <form action="{{route('delete',['data'=>$data])}}" method="POST">
+                    @csrf
+                    @method("DELETE")
+                    <button class="bt btn-warning">Delete</button>
+                </form>
+            </div>
+
+        </th>
       </tr>
               @endforeach
     </tbody>

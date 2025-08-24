@@ -22,5 +22,8 @@ require __DIR__.'/auth.php';
 Route::get('/admin/dashboard',[HomeController::class,'index'])->middleware(['auth','admin']);
 Route::get('/',[HomeController::class,'home']);
 Route::get('/categories',[AdminController::class,'index'])->middleware(['auth','admin'])->name('admin.categories');
+Route::post('/categories',[AdminController::class,'create'])->middleware(['auth','admin'])->name('create');
+Route::get('/categories/edit/{data}',[AdminController::class,'edit'])->middleware(['auth','admin'])->name('edit');
+Route::put('/categories/edit/{data}',[AdminController::class,'update'])->middleware(['auth','admin'])->name('update');
+Route::delete('/categories/delete/{data}',[AdminController::class,'delete'])->middleware(['auth','admin'])->name('delete');
 
-Route::post('/create-category',[AdminController::class,'create'])->middleware(['auth','admin'])->name('admin.create.category');
