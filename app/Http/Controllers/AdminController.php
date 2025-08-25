@@ -77,4 +77,9 @@ public function storeProduct(Request $request){
 
 }
 
+public function viewProducts() {
+    $data = Products::all();
+    return view('admin.viewProducts',['data'=>$data]);
+}
+
 }
