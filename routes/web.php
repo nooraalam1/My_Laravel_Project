@@ -27,3 +27,5 @@ Route::get('/categories/edit/{data}',[AdminController::class,'edit'])->middlewar
 Route::put('/categories/edit/{data}',[AdminController::class,'update'])->middleware(['auth','admin'])->name('update');
 Route::delete('/categories/delete/{data}',[AdminController::class,'delete'])->middleware(['auth','admin'])->name('delete');
 
+Route::get('/add_product',[AdminController::class,'addProduct'])->middleware(['auth','admin'])->name('addProduct');
+Route::post('/store_product',[AdminController::class,'storeProduct'])->middleware(['auth','admin'])->name('storeProduct');

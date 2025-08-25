@@ -1,4 +1,6 @@
- @include('admin.header')
+@include('admin.css')
+
+@include('admin.header')
 
  <div>
  <div class="d-flex align-items-stretch">
@@ -60,7 +62,6 @@
 </div>
      </div>
 
-     @include('admin.css')
  </div>
 
 </div>

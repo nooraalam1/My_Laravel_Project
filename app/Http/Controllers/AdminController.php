@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -48,6 +49,31 @@ public function delete(Category $data){
 
     $data->delete();
     return redirect(route('admin.categories'));
+
+}
+
+public function addProduct(){
+    $category = Category::all();
+    return view('admin.addProduct',['category'=>$category]);
+}
+
+
+public function storeProduct(Request $request){
+
+    $data = $request->validate([
+        'title'=>'nullable',
+        'description'=>'nullable',
+        'img'=>'nullable',
+        'price'=>'nullable',
+        'category'=>'nullable',
+        'quantity'=>'nullable',
+    ]);
+
+
+
+    Products::create($data);
+
+    return redirect(route('addProduct'));
 
 }
 
