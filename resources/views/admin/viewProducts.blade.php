@@ -20,7 +20,7 @@
       <table class="table ">
     <!-- head -->
     <thead>
-      <tr class="text-white">
+      <tr class="text-white text-center">
 
         <th>SL</th>
         <th>Created At</th>
@@ -29,6 +29,7 @@
         <th>Price</th>
         <th>Category</th>
         <th>Quantity</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -43,6 +44,13 @@
         <th>{{$datam->price}}</th>
         <th>{{$datam->category}}</th>
         <th>{{$datam->quantity}}</th>
+        <th class="flex justify-center items-center gap-4">
+
+            <a href="{{route('editViewProducts')}}" class="btn btn-secondary">Edit</a>
+            <form>
+                <button class="btn btn-info">Delete</button>
+            </form>
+        </th>
       </tr>
               @endforeach
     </tbody>

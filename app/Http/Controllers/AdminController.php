@@ -83,4 +83,9 @@ public function viewProducts() {
     return view('admin.viewProducts',['data'=>$data]);
 }
 
+public function editViewProducts(){
+
+return view('admin.edit_viewProducts');
+}
+
 }
