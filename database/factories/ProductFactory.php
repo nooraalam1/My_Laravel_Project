@@ -20,7 +20,7 @@ class ProductFactory extends Factory
             'title' => fake()->name(),
             'description' => fake()->name(),
             'price' => fake()->numberBetween(100,10000),
-            'category' => fake()->name(),
+            'category' => fake()->randomElement(['Menz','Kidz','Boyz','Female']),
             'quantity' => fake()->numberBetween(1,100),
 
         ];

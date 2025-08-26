@@ -78,7 +78,7 @@ public function storeProduct(Request $request){
 }
 
 public function viewProducts() {
-    $data = Product::paginate(10);
+    $data = Product::orderBy('created_at','desc')->paginate(10);
 
     return view('admin.viewProducts',['data'=>$data]);
 }

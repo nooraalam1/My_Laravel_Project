@@ -27,7 +27,7 @@
   <table class="table">
     <!-- head -->
     <thead>
-      <tr>
+      <tr class="text-white">
 
         <th>ID</th>
         <th>Category Name</th>

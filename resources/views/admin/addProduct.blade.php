@@ -4,7 +4,7 @@
 
  <div>
  <div class="d-flex align-items-stretch">
-
+@include('admin.sidebar')
 
      <div class="page-content">
 

@@ -19,8 +19,8 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/admin/dashboard',[HomeController::class,'index'])->middleware(['auth','admin']);
-Route::get('/',[HomeController::class,'home']);
+Route::get('/admin/dashboard',[HomeController::class,'index'])->middleware(['auth','admin'])->name('adminDashHome');
+Route::get('/',[HomeController::class,'home'])->name('home');
 Route::get('/categories',[AdminController::class,'index'])->middleware(['auth','admin'])->name('admin.categories');
 Route::post('/categories',[AdminController::class,'create'])->middleware(['auth','admin'])->name('create');
 Route::get('/categories/edit/{data}',[AdminController::class,'edit'])->middleware(['auth','admin'])->name('edit');

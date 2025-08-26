@@ -9,7 +9,7 @@
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
         <ul class="list-unstyled">
-                <li><a href="#"> <i class="icon-home"></i>Home </a></li>
+                <li><a href="{{route('adminDashHome')}}"> <i class="icon-home"></i>Home </a></li>
                 <li><a href="{{route('admin.categories')}}"> <i class="icon-grid"></i>Categories </a></li>
 
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Products</a>

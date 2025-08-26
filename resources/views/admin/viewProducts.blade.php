@@ -15,6 +15,7 @@
 <div class="">
     <div class="w-3/4 mx-auto">
 
+        <h3 class="text-center">Total:{{$data->total()}}</h3>
 
       <table class="table ">
     <!-- head -->
@@ -22,7 +23,7 @@
       <tr class="text-white">
 
         <th>SL</th>
-        <th>Product ID</th>
+        <th>Created At</th>
         <th>Product Title</th>
         <th>Description</th>
         <th>Price</th>
@@ -36,7 +37,7 @@
 
       <tr>
         <th>{{$loop->index +$data->firstItem()}}</th>
-        <th>{{$datam->id}}</th>
+        <th>{{$datam->created_at}}</th>
         <th>{{$datam->title}}</th>
         <th>{{$datam->description}}</th>
         <th>{{$datam->price}}</th>
@@ -63,3 +64,11 @@
  </div>
 
  </div>
+ <script src="{{ asset('admindash/vendor/jquery/jquery.min.js') }}"></script>
+ <script src="{{ asset('admindash/vendor/popper.js/umd/popper.min.js') }}"></script>
+ <script src="{{ asset('admindash/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+ <script src="{{ asset('admindash/vendor/jquery.cookie/jquery.cookie.js') }}"></script>
+ <script src="{{ asset('admindash/vendor/chart.js/Chart.min.js') }}"></script>
+ <script src="{{ asset('admindash/vendor/jquery-validation/jquery.validate.min.js') }}"></script>
+ <script src="{{ asset('admindash/js/charts-home.js') }}"></script>
+ <script src="{{ asset('admindash/js/front.js') }}"></script>
