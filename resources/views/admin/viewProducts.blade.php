@@ -12,13 +12,17 @@
          @include('admin.pageheader')
 
 
-<div class="overflow-x-auto">
-      <table class="table">
+<div class="">
+    <div class="w-3/4 mx-auto">
+
+
+      <table class="table ">
     <!-- head -->
     <thead>
-      <tr>
+      <tr class="text-white">
 
-        <th>ID</th>
+        <th>SL</th>
+        <th>Product ID</th>
         <th>Product Title</th>
         <th>Description</th>
         <th>Price</th>
@@ -28,19 +32,28 @@
     </thead>
     <tbody>
 
-        @foreach ($data as $data)
+        @foreach ($data as $datam)
 
       <tr>
-        <th>{{$data->id}}</th>
-        <th>{{$data->title}}</th>
-        <th>{{$data->description}}</th>
-        <th>{{$data->price}}</th>
-        <th>{{$data->category}}</th>
-        <th>{{$data->quantity}}</th>
+        <th>{{$loop->index +$data->firstItem()}}</th>
+        <th>{{$datam->id}}</th>
+        <th>{{$datam->title}}</th>
+        <th>{{$datam->description}}</th>
+        <th>{{$datam->price}}</th>
+        <th>{{$datam->category}}</th>
+        <th>{{$datam->quantity}}</th>
       </tr>
               @endforeach
     </tbody>
   </table>
+</div>
+
+
+<div class="flex justify-center items-center mt-4">
+    <div class="join">
+  <button class="join-item btn btn-xl"> {{ $data->links() }} </button>
+</div>
+</div>
 </div>
 
 

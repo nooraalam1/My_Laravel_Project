@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Category;
-use App\Models\Products;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -71,14 +71,15 @@ public function storeProduct(Request $request){
 
 
 
-    Products::create($data);
+    Product::create($data);
 
     return redirect(route('addProduct'));
 
 }
 
 public function viewProducts() {
-    $data = Products::all();
+    $data = Product::paginate(10);
+
     return view('admin.viewProducts',['data'=>$data]);
 }
 
