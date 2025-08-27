@@ -73,7 +73,7 @@ public function storeProduct(Request $request){
 
     Product::create($data);
 
-    return redirect(route('addProduct'));
+    return redirect(route('viewProducts'));
 
 }
 
@@ -83,9 +83,25 @@ public function viewProducts() {
     return view('admin.viewProducts',['data'=>$data]);
 }
 
-public function editViewProducts(){
+public function editViewProducts($data){
+$data = Product::find($data);
+return view('admin.edit_viewProducts',['data'=>$data]);
+}
 
-return view('admin.edit_viewProducts');
+public function updateViewProducts(Request $request, Product $data){
+
+$updatedViewProducts = $request->validate([
+        'title'=>'nullable',
+        'description'=>'nullable',
+        'price'=>'nullable',
+        'img'=>'nullable',
+        'category'=>'nullable',
+        'quantity'=>'nullable',
+]);
+
+$data->update($updatedViewProducts);
+return redirect(route('viewProducts'));
+
 }
 
 }

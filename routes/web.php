@@ -30,4 +30,5 @@ Route::delete('/categories/delete/{data}',[AdminController::class,'delete'])->mi
 Route::get('/add_product',[AdminController::class,'addProduct'])->middleware(['auth','admin'])->name('addProduct');
 Route::post('/store_product',[AdminController::class,'storeProduct'])->middleware(['auth','admin'])->name('storeProduct');
 Route::get('/view_products',[AdminController::class,'viewProducts'])->middleware(['auth','admin'])->name('viewProducts');
-Route::get('/edit_viewProducts',[AdminController::class,'editViewProducts'])->middleware(['auth','admin'])->name('editViewProducts');
+Route::get('/edit_viewProducts/{data}',[AdminController::class,'editViewProducts'])->middleware(['auth','admin'])->name('editViewProducts');
+Route::put('/update_viewProducts/{data}',[AdminController::class,'updateViewProducts'])->middleware(['auth','admin'])->name('updateViewProducts');

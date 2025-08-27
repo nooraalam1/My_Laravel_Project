@@ -46,7 +46,7 @@
         <th>{{$datam->quantity}}</th>
         <th class="flex justify-center items-center gap-4">
 
-            <a href="{{route('editViewProducts')}}" class="btn btn-secondary">Edit</a>
+            <a href="{{route('editViewProducts',['data'=>$datam->id])}}" class="btn btn-secondary">Edit</a>
             <form>
                 <button class="btn btn-info">Delete</button>
             </form>
