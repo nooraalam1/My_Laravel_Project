@@ -14,7 +14,18 @@
 
 <div class="">
     <div class="w-3/4 mx-auto">
+        <div class="flex justify-center items-center my-8">
 
+            <form method="get" action="{{route('searchViewProducts')}}">
+                @csrf
+                @method('GET')
+                <input type="search" name="search">
+                <input type="submit" value="Search">
+
+
+            </form>
+
+        </div>
         <h3 class="text-center">Total:{{$data->total()}}</h3>
 
       <table class="table ">

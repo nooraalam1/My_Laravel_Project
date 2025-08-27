@@ -33,3 +33,5 @@ Route::get('/view_products',[AdminController::class,'viewProducts'])->middleware
 Route::get('/edit_viewProducts/{data}',[AdminController::class,'editViewProducts'])->middleware(['auth','admin'])->name('editViewProducts');
 Route::put('/update_viewProducts/{data}',[AdminController::class,'updateViewProducts'])->middleware(['auth','admin'])->name('updateViewProducts');
 Route::delete('/delete_viewProducts/{data}',[AdminController::class,'deleteViewProducts'])->middleware(['auth','admin'])->name('deleteViewProducts');
+
+Route::get('/search_viewProducts',[AdminController::class,'searchViewProducts'])->middleware(['auth','admin'])->name('searchViewProducts');

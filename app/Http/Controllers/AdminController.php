@@ -111,4 +111,13 @@ public function deleteViewProducts(Product $data){
 
 }
 
+public function searchViewProducts(Request $request){
+
+$searchData = $request->search;
+$data = Product::where('category','LIKE','%'.$searchData.'%')->paginate(10);
+
+return view('admin.ViewProducts',['data'=>$data]);
+
+}
+
 }
