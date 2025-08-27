@@ -32,3 +32,4 @@ Route::post('/store_product',[AdminController::class,'storeProduct'])->middlewar
 Route::get('/view_products',[AdminController::class,'viewProducts'])->middleware(['auth','admin'])->name('viewProducts');
 Route::get('/edit_viewProducts/{data}',[AdminController::class,'editViewProducts'])->middleware(['auth','admin'])->name('editViewProducts');
 Route::put('/update_viewProducts/{data}',[AdminController::class,'updateViewProducts'])->middleware(['auth','admin'])->name('updateViewProducts');
+Route::delete('/delete_viewProducts/{data}',[AdminController::class,'deleteViewProducts'])->middleware(['auth','admin'])->name('deleteViewProducts');

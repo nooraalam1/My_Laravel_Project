@@ -47,7 +47,9 @@
         <th class="flex justify-center items-center gap-4">
 
             <a href="{{route('editViewProducts',['data'=>$datam->id])}}" class="btn btn-secondary">Edit</a>
-            <form>
+            <form method="post" action="{{route('deleteViewProducts',['data'=>$datam])}}">
+                @csrf
+                @method('DELETE')
                 <button class="btn btn-info">Delete</button>
             </form>
         </th>

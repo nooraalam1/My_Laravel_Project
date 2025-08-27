@@ -104,4 +104,11 @@ return redirect(route('viewProducts'));
 
 }
 
+public function deleteViewProducts(Product $data){
+
+    $data->delete();
+    return redirect(route('viewProducts'));
+
+}
+
 }
