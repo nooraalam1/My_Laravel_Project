@@ -14,3 +14,8 @@
 ## Breeze for Authentication
     composer require laravel/breeze --dev
     php artisan breeze:install
+
+
+## git fetch origin
+If you want to reset all your local changes for this branch then use,
+    git reset --hard origin/your-branch

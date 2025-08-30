@@ -5,15 +5,15 @@
           Latest Products
         </h2>
       </div>
-      <div class="row">
-        
-        
+      <div class="">
+
+
         @foreach($products as $product)
 
-        <h2>{{$product->title}}</h2>
+        <p>{{$product->title}}</p> <br>
         @endforeach
 
-     
+
 
       </div>
 
