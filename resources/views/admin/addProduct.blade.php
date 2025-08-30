@@ -12,7 +12,7 @@
 
   <div style="background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0px 4px 12px rgba(0,0,0,0.1); width: 350px;">
     <h1 style="text-align: center; margin-bottom: 20px; font-size: 22px; color: #333;">Add A Product</h1>
-    <form style="display: flex; flex-direction: column;" method="POST" action="{{route('storeProduct')}}">
+    <form style="display: flex; flex-direction: column;" method="POST" action="{{route('storeProduct')}}" enctype="multipart/form-data">
         @csrf
         @method('POST')
       <label for="title" style="font-size: 14px; margin-bottom: 5px; color: #555;">Title</label>

@@ -10,7 +10,8 @@
 
         @foreach($products as $product)
 
-        <p>{{$product->title}}</p> <br>
+        <img src={{asset('images/' . $product->img) }} alt="">
+
         @endforeach
 
 

@@ -58,23 +58,25 @@ public function addProduct(){
 }
 
 
-public function storeProduct(Request $request){
+public function storeProduct(Request $request)
+{
 
     $data = $request->validate([
-        'title'=>'nullable',
-        'description'=>'nullable',
-        'img'=>'nullable',
-        'price'=>'nullable',
-        'category'=>'nullable',
-        'quantity'=>'nullable',
+        'title' => 'nullable|string|max:255',
+        'description' => 'nullable|string',
+        'img' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'price' => 'nullable|numeric',
+        'category' => 'nullable|string|max:255',
+        'quantity' => 'nullable|integer',
     ]);
 
-
+        $imgName = time().'.'.$request->img->getClientOriginalExtension();
+        $request->img->move(public_path('images'), $imgName);
+        $data['img'] = $imgName;
 
     Product::create($data);
 
-    return redirect(route('viewProducts'));
-
+    return redirect()->route('viewProducts');
 }
 
 public function viewProducts() {
@@ -115,6 +117,7 @@ public function searchViewProducts(Request $request){
 
 $searchData = $request->search;
 $data = Product::where('category','LIKE','%'.$searchData.'%')->paginate(10);
+
 
 return view('admin.ViewProducts',['data'=>$data]);
 
