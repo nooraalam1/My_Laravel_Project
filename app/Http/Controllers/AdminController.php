@@ -120,6 +120,12 @@ return redirect(route('viewProducts'));
 
 public function deleteViewProducts(Product $data){
 
+    if(($data->img)){
+        $deleteImgPath = public_path('images/'.$data->img);
+        if(file_exists($deleteImgPath)){
+            unlink($deleteImgPath);
+        }
+    }
     $data->delete();
     return redirect(route('viewProducts'));
 

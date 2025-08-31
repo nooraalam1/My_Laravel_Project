@@ -11,8 +11,7 @@ class HomeController extends Controller
     }
 
     public function home(){
-        $products = Product::orderBy('created_at','desc')->get();
-
+        $products = Product::orderBy('created_at','desc')->paginate(9);
         return view('home.index',['products'=>$products]);
     }
 }
