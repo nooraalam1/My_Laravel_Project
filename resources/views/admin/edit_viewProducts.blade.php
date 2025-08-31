@@ -10,7 +10,7 @@
 
             @include('admin.pageheader')
             <div>
-                <form method="post" action="{{ route('updateViewProducts', ['data' => $data]) }}">
+                <form method="post" action="{{ route('updateViewProducts', ['data' => $data]) }}  " enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 

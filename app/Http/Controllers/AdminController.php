@@ -96,10 +96,22 @@ $updatedViewProducts = $request->validate([
         'title'=>'nullable',
         'description'=>'nullable',
         'price'=>'nullable',
-        'img'=>'nullable',
+        'img'=>'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
         'category'=>'nullable',
         'quantity'=>'nullable',
 ]);
+
+    if($request->hasFile('img')){
+$deleteImgPath = public_path('images/'.$data->img);
+    if(file_exists($deleteImgPath)){
+        unlink($deleteImgPath);
+    }
+
+    $imgName = time().'.'.$request->img->getClientOriginalExtension();
+    $request->img->move(public_path('images'),$imgName);
+    $updatedViewProducts['img'] = $imgName;
+
+    }
 
 $data->update($updatedViewProducts);
 return redirect(route('viewProducts'));

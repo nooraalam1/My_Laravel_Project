@@ -40,6 +40,7 @@
         <th>Price</th>
         <th>Category</th>
         <th>Quantity</th>
+        <th>Image</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -55,6 +56,7 @@
         <th>{{$datam->price}}</th>
         <th>{{$datam->category}}</th>
         <th>{{$datam->quantity}}</th>
+        <th> <img src="{{asset('images/'.$datam->img)}}" class="h-8"></th>
         <th class="flex justify-center items-center gap-4">
 
             <a href="{{route('editViewProducts',['data'=>$datam->id])}}" class="btn btn-secondary">Edit</a>
